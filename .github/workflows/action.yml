@@ -6,7 +6,7 @@ branding:
   color: 'blue'
 inputs:
   BASE-BRANCH-PATTERN:
-    description: 'The pattern of the base branch'
+    description: 'The pattern of the base  branch'
   PERSONAL-ACCESS-TOKEN:
     description: 'Personal access token to read branch protection rules'
   RULES-LIMIT:
