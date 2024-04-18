@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '20.x'
       - name: Run Branch Protection
-        uses: venh/branch-protection@v1.1.0
+        uses: venh/branch-protection@v1.0.0
         with:
           token: '${{ secrets.token }}' 
           org: ManojKumar2133 
