@@ -1,12 +1,13 @@
-name: 'Branch Guardian'
-description: 'Create and/or delete branch protection rules based on a supplied branch pattern.'
-author: 'Infamous Riddles'
-branding:
-  icon: 'git-branch'  
-  color: 'blue'
+name: "Build & Check action's code"
+on: push
+jobs:
+  action:
+    name: action.yml
+    runs-on: ubuntu-22.04
 inputs:
   BASE-BRANCH-PATTERN:
     description: 'The pattern of the base  branch'
+    default: ''
   PERSONAL-ACCESS-TOKEN:
     description: 'Personal access token to read branch protection rules'
   RULES-LIMIT:
@@ -44,7 +45,18 @@ inputs:
   RESTRICTIONS-APPS:
     description: 'List of apps allowed to push on the protected branch.'
     default: ''
-    
-runs:
-  using: 'node16'
-  main: .github/index.js
+    steps:
+    - uses: actions/checkout@v1
+    - name: set-up Node 16
+      uses: actions/setup-node@v4
+      with:
+        node-version: '16'
+    - name: npm install, build and test
+      run: |
+        npm install
+    - name: Run index.js
+      run: |
+        pwd
+        ls
+        node .github/index.js
+      
