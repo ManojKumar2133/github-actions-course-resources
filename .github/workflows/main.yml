@@ -8,9 +8,9 @@ jobs:
     runs-on: 'node20'
     steps:
       - name: Checkout branch
-        uses: actions/checkout@main
+      #  uses: actions/checkout@main
      # - name: Run Branch Protection
-        #uses: venh/branch-protection@v1.1.0
+        uses: venh/branch-protection@v1.1.0
         with:
           token: '${{ secrets.token }}' 
           org: ManojKumar2133 
