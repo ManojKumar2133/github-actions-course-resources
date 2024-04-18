@@ -12,7 +12,7 @@ jobs:
         with:
           token: '${{ secrets.token }}' 
           org: ManojKumar2133 
-          rulesPath: ./rules.json 
-          includedReposPath: ./includedRepos.txt
+          rulesPath: /rules.json 
+          includedReposPath: /includedRepos.txt
           # excludedReposPath: ./excludedRepos.txt
           action: set
