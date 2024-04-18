@@ -1,5 +1,7 @@
 name: "Create branch protection rule"
-on: create
+on:
+  branch_protection_rule:
+    types: [created]
 
 jobs:
   test: # Test action's functionality
