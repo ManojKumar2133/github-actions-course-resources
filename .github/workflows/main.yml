@@ -7,8 +7,10 @@ jobs:
   BP:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Branch Protection
-        uses: venh/branch-protection@v1.1.0
+      - name: Checkout branch
+        uses: actions/checkout@main
+     # - name: Run Branch Protection
+        #uses: venh/branch-protection@v1.1.0
         with:
           token: '${{ secrets.token }}' 
           org: ManojKumar2133 
