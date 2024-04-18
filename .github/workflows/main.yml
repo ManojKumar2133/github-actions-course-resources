@@ -1,5 +1,8 @@
 name: BP
-on: push
+on: 
+  push:
+    branches:
+       -main
 jobs:
   BP:
     runs-on: ubuntu-latest
@@ -7,9 +10,9 @@ jobs:
       - name: Run Branch Protection
         uses: venh/branch-protection@v1.1.0
         with:
-          token: '${{ secrets.GITHUB_ADMIN_ACCESS_TOKEN }}' 
-          org: Name-Of-Your-GitHub-Organization 
+          token: '${{ secrets.token }}' 
+          org: ManojKumar2133 
           rulesPath: ./rules.json 
           includedReposPath: ./includedRepos.txt
-          excludedReposPath: ./excludedRepos.txt
+          # excludedReposPath: ./excludedRepos.txt
           action: set
