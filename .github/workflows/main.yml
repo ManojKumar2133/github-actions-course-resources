@@ -5,7 +5,7 @@ on:
        -main
 jobs:
   BP:
-    runs-on: ubuntu-latest
+    runs-on: 'node20'
     steps:
       - name: Checkout branch
         uses: actions/checkout@main
