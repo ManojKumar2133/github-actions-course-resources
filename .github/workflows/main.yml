@@ -1,25 +1,20 @@
-name: BP
-on: 
-  push:
-    branches:
-       -main
+name: "Create branch protection rule"
+on: create
+
 jobs:
-  BP:
+  test: # Test action's functionality
     runs-on: ubuntu-latest
-    
     steps:
-    
-     # - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-      - name: Run Branch Protection
-        uses: venh/branch-protection@v1.0.0
-        with:
-          token: '${{ secrets.token }}' 
-          org: ManojKumar2133 
-          rulesPath: ./rules.json 
-          includedReposPath: ./includedRepos.txt
-          # excludedReposPath: ./excludedRepos.txt
-          action: set
+    - uses: actions/checkout@v1
+    - uses: ./
+      with: 
+        PERSONAL-ACCESS-TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        BASE-BRANCH-PATTERN: 'main'
+        REQUIRED-NUMBER-OF-REVIEWERS: 2
+        REQUIRED-STATUS-CHECKS: 'build,test'
+        REQUIRE-REVIEW-FROM-CODEOWNERS: 'true'
+        DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: 'true'
+        REQUIRE-LINEAR-HISTORY: 'true'
+        ALLOW-FORCE-PUSHES: 'true'
+        ALLOW-DELETIONS: 'true'
+        INCLUDE-ADMINISTRATORS: 'true'
