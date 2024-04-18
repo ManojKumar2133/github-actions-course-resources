@@ -1,5 +1,7 @@
 name: "Delete branch protection rule"
-on: delete
+on:
+  branch_protection_rule:
+    types: [deleted]
 
 jobs:
   test: # make sure the action works on a clean machine without building
@@ -8,6 +10,6 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ./
       with: 
-        PERSONAL-ACCESS-TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        BASE-BRANCH-PATTERN: '^feature\/[a-zA-Z0-9]+$'
+        PERSONAL-ACCESS-TOKEN: ${{ secrets.token }}
+        BASE-BRANCH-PATTERN: 'main'
         RULES-LIMIT: 50
