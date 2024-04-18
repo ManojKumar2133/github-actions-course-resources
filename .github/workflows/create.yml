@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ./
       with: 
-        PERSONAL-ACCESS-TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        PERSONAL-ACCESS-TOKEN: ${{ secrets.token }}
         BASE-BRANCH-PATTERN: 'main'
         REQUIRED-NUMBER-OF-REVIEWERS: 2
         REQUIRED-STATUS-CHECKS: 'build,test'
