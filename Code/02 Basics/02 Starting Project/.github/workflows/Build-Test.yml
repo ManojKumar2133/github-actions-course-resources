@@ -1,5 +1,5 @@
 name: BuildTest
-on: workflow_dispatch
+on: push
 jobs:
   job:
     name: Test
