@@ -12,6 +12,8 @@ jobs:
         with:
           node-version: '18'
       - name: Install Dependencies
-        run: npm ci
+        run: |
+           cd Code/02 Basics/02 Starting Project
+           npm ci
       - name: Run Tests
         run: npm test
