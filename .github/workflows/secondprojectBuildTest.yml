@@ -2,13 +2,12 @@ name: BuildTest
 on: workflow_dispatch
 jobs:
   job:
-    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        use: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Install Nodejs
-        use: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
       - name: Install Dependencies
