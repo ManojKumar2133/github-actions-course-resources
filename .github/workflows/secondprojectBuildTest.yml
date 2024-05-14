@@ -1,3 +1,4 @@
+name: Buid&Test
 on: workflow_dispatch
 jobs:
   job:
