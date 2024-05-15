@@ -1,12 +1,51 @@
-name: Build Job
-on: [workflow_call,workflow_dispatch]
+name: Build&Test
+on: [workflow_dispatch,push]
    
 jobs:
-  init:
-    name: Init
+   Build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Init
-        uses: ManojKumar2133/github-actions-course-resources/Code/02 Basics/02 Starting Project/.github/workflows@main
-        
-       
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Change Directory
+        run: cd github-actions-course-resources/github-actions-course-resources/Code/02 Basics/02 Starting Project
+      - name: Install Dependencies
+        run: |
+          pwd
+          ls
+          npm ci
+      - name: Build
+        run: npm run build
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Artifact  
+          path: ./dist
+          if-no-files-found: warn
+          retention-days: 3
+          compression-level: 5
+      
+   Test:
+     name: Test
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Change Directory
+        run: cd github-actions-course-resources/github-actions-course-resources/Code/02 Basics/02 Starting Project
+      - name: Install Dependencies
+        run: |
+          pwd
+          ls
+          npm ci
+      - name: Test
+        run: npm run test
