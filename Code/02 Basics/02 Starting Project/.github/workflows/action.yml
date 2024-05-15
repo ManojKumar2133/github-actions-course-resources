@@ -9,8 +9,10 @@ runs:
         with:
           node-version: '18'
       - name: Install Dependencies
+        shell: bash
         run: npm ci
       - name: Build
+        shell: bash
         run: npm run build
       - name: Publish Artifact
         uses: actions/upload-artifact@v4
@@ -21,5 +23,6 @@ runs:
           retention-days: 3
           compression-level: 5
       - name: Test
+        shell: bash
         run: npm run test
 
