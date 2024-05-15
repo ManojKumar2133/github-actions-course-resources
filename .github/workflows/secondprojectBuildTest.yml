@@ -2,4 +2,4 @@ name: Buid&Test
 on: workflow_dispatch
 jobs:
   job:
-    uses: ManojKumar2133/github-actions-course-resources/Code/02 Basics/02 Starting Project/.github/workflows/Build-Test.yml@main
+    uses: ./Code/02 Basics/02 Starting Project/.github/workflows/Build-Test.yml
