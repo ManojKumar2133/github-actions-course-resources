@@ -1,5 +1,3 @@
-ManojKumar2133/github-actions-course-resources/Code/"02 Basics"/"02 Starting Project"/.github/workflows/Build-Test.yml
-
 name: Build Job
 on: [workflow_call,workflow_dispatch]
    
