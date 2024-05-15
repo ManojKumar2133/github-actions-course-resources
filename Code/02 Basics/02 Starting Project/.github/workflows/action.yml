@@ -10,7 +10,10 @@ runs:
           node-version: '18'
       - name: Install Dependencies
         shell: bash
-        run: npm ci
+        run: |
+          pwd
+          ls
+          npm i
       - name: Build
         shell: bash
         run: npm run build
