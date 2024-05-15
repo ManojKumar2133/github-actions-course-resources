@@ -12,6 +12,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+      - run: |
+          pwd
+          ls
       - name: Change Directory
         run: cd github-actions-course-resources/github-actions-course-resources/Code/"02 Basics"/"02 Starting Project"
       - name: Install Dependencies
