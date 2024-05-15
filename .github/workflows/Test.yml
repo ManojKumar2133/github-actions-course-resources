@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Init
-        uses: ManojKumar2133/github-actions-course-resources/Code/"02 Basics"/"02 Starting Project"/.github/workflows@main
+        uses: ManojKumar2133/github-actions-course-resources/Code/02 Basics/02 Starting Project/.github/workflows@main
         
        
