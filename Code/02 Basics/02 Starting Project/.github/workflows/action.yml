@@ -1,10 +1,7 @@
 name: StartingProjectBuild&Test
-on: workflow_dispatch
-jobs:
-  Build:
-    name: Build&Test
-    runs-on: ubuntu-latest
-    steps:
+runs:
+  using: 'composite'
+  steps:
       - name: Get code
         uses: actions/checkout@v3
       - name: Install Nodejs
@@ -23,19 +20,6 @@ jobs:
           if-no-files-found: warn
           retention-days: 3
           compression-level: 5
-
-  Test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Install dependencies
-        run: npm ci
       - name: Test
         run: npm run test
 
