@@ -16,8 +16,7 @@ jobs:
           pwd
           ls
       - name: Change Directory
-        run: cd github-actions-course-resources
-        # /github-actions-course-resources/Code/"02 Basics"/"02 Starting Project"
+        run: cd /home/runner/work/github-actions-course-resources/github-actions-course-resources/Code/"02 Basics"/"02 Starting Project"
       - name: Install Dependencies
         run: |
           pwd
